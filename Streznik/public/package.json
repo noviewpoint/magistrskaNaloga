@@ -1,0 +1,35 @@
+{
+  "name": "movement-visualizer",
+  "version": "1.0.0",
+  "description": "Magistrska naloga: Spletna aplikacija za upodabljanje povratne informacije pri gibalnem učenju",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "David Brvar",
+    "email": "db9949@student.uni-lj.si"
+  },
+  "bugs": {
+    "url": "https://github.com/noviewpoint/MovementVisualizer/issues"
+  },
+  "homepage": "https://github.com/noviewpoint/MovementVisualizer#readme",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-ui-bootstrap": "^2.5.0",
+    "angular-ui-router": "^0.4.2",
+    "angularjs-slider": "^6.1.1",
+    "animate.css": "^3.5.2",
+    "bootstrap": "^3.3.7",
+    "bower": "^1.8.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-ngdocs": "^0.2.10",
+    "socket.io": "^1.7.3",
+    "three.js": "^0.77.1",
+    "three.meshline": "^1.0.3",
+    "tone": "^0.10.0"
+  }
+}

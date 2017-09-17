@@ -1,0 +1,74 @@
+<h1 style="text-align: center; color: white;">Dobrodosel</h1>
+<p style="text-align: center; color: white;">To je vstopna stran Golf Movement Visualizer! Za vstop pritisni Enter</p>
+<div ui-sref="default" id="enterKey"></div>
+<div style="position: absolute; left: 0; right: 0; top: 100px; margin-left: 45px; margin-right: 45px;">
+
+	<div class="row" style="background: rgba(255, 255, 255, 0.8); width: 100%; height: 100%; margin-bottom: 60px;" ng-class="WelcomeCtrl.animateChangeLog();">
+
+		<div class="col-md-6">
+			<h3 style="text-align: center;">Changelog:</h3>
+			<ul>
+				<dl>
+					<dt>Hitrost predvajanja animacije</dt>
+					<dd>hitrost predvajanja udarca s sliderjem se lahko spreminja "real-time"</dd>
+				</dl>
+				<dl>
+					<dt>Izklapljanje prikaza</dt>
+					<dd>kadarkoli (tudi med premorom) mozen vklop/izklop prikaza vseh objektov</dd>
+				</dl>
+				<dl>
+					<dt>Sence</dt>
+					<dd>palice mecejo srednje kvalitetne sence na trato</dd>
+				</dl>
+				<dl>
+					<dt>Okolica</dt>
+					<dd>z Cube Mapping</dd>
+				</dl>
+				<dl>
+					<dt>Trata</dt>
+					<dd>trata ustvarjena na podlagi ponavljanja tekstur</dd>
+				</dl>
+				<dl>
+					<dt>Stevec FPS</dt>
+					<dd>s klikom nanj preklapljamo med tremi nacini: FPS / MS / MB</dd>
+				</dl>
+				<dl>
+					<dt>Glajenje robov (Anti-aliasing)</dt>
+					<dd>zaradi perfomance issues zaenkrat izklopljeno</dd>
+				</dl>
+				<dl>
+					<dt>Risanje Canvas grafov</dt>
+					<dd>risanje 2D grafov za podatke golf udarcev</dd>
+				</dl>
+			</ul>
+		</div>
+		<div class="col-md-6">
+			<h3 style="text-align: center;">V delu:</h3>
+			<ul>
+				<dl>
+					<dt>Nebo:</dt>
+					<dd>narediti ga z Vertex Shader programiranjem (GLSL jezik)</dd>
+				</dl>
+				<dl>
+					<dt>Trata:</dt>
+					<dd>poskusiti izboljsati izgled z Bump Map / Specular Map / Normal Map / Displacement Map / Ambient Occlusion Map</dd>
+				</dl>
+				<dl>
+					<dt>Clovek</dt>
+					<dd>na podlagi <a href="https://threejs.org/examples/#webgl_animation_skinning_blending">https://threejs.org/examples/#webgl_animation_skinning_blending</a> izdelati cloveka in obarvati njegove sklepe / markerje</dd>
+				</dl>
+				<dl>
+					<dt>Golf zogica</dt>
+					<dd>v programu Blender izdelati preprost objekt golf zogice in podstavka ter ga uporabiti v Three.js</dd>
+				</dl>
+				<dl>
+					<dt>Risanje Canvas grafov</dt>
+					<dd>popraviti napacno risanje na grafu (X, Y), odpraviti "utripanje" grafa in izboljsati performance</dd>
+				</dl>
+			</ul>
+		</div>
+
+	</div>
+	<button style="position: fixed; bottom: 0;" ng-click="WelcomeCtrl.changeLog();" class="btn btn-warning">changelog</button>
+
+</div>

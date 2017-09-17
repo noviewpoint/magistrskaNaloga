@@ -1,0 +1,486 @@
+{
+	"vrsta": "referencna",
+	"zapis": [
+		{
+			"casovni zig": "0",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["0"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["80.230385", "187.362", "268.57507"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["80.230385", "187.362", "268.57507", "0", "0", "1.5"]
+				}
+			]
+		},
+		{
+			"casovni zig": "52000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["2.314"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["70.32402", "191.70235", "269.54004"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["70.32402", "191.70235", "269.54004", "0.01", "0.01", "1.45"]
+				}
+			]
+		},
+		{
+			"casovni zig": "104000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["4.053"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["50.72041", "198.55623", "270.78876"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["50.72041", "198.55623", "270.78876", "0.02", "0.02", "1.4"]
+				}
+			]
+		},
+		{
+			"casovni zig": "156000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["0.102"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["30.286015", "198.70973", "272.9753"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["30.286015", "198.70973", "272.9753", "0.03", "0.03", "1.35"]
+				}
+			]
+		},
+		{
+			"casovni zig": "208000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["11.964"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["0.380805", "222.54207", "276.25015"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["0.380805", "222.54207", "276.25015", "0.04", "0.06", "1.3"]
+				}
+			]
+		},
+		{
+			"casovni zig": "260000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["4.035"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-10.351585", "241.48842", "283.74896"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-10.351585", "241.48842", "283.74896", "0.05", "0.09", "1.25"]
+				}
+			]
+		},
+		{
+			"casovni zig": "312000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["43.646"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-70.579666", "267.65956", "297.81369"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-70.579666", "267.65956", "297.81369", "0.09", "0.12", "1.2"]
+				}
+			]
+		},
+		{
+			"casovni zig": "364000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["21.048"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-150.66945", "291.85635", "321.99461"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-150.66945", "291.85635", "321.99461", "0.13", "0.2", "1.15"]
+				}
+			]
+		},
+		{
+			"casovni zig": "416000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["16.403"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-240.33641", "336.56107", "361.55014"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-240.33641", "336.56107", "361.55014", "0.20", "0.3", "1.1"]
+				}
+			]
+		},
+		{
+			"casovni zig": "468000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["19.232"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-350.66342", "395.03195", "423.13977"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-350.66342", "395.03195", "423.13977", "0.30", "0.45", "1.05"]
+				}
+			]
+		},
+		{
+			"casovni zig": "520000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["5.682"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-460.90955", "469.11017", "511.27594"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-460.90955", "469.11017", "511.27594", "0.4", "0.6", "1.0"]
+				}
+			]
+		},
+		{
+			"casovni zig": "572000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["1.661"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-570.84686", "569.41003", "629.2889"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-570.84686", "569.41003", "629.2889", "0.75", "0.65", "0.95"]
+				}
+			]
+		},
+		{
+			"casovni zig": "624000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["1.901"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-650.10223", "674.8013", "777.5323"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-650.10223", "674.8013", "777.5323", "1", "1", "0.9"]
+				}
+			]
+		},
+		{
+			"casovni zig": "676000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["5.512"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-700.8874", "788.341", "952.27765"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-700.8874", "788.341", "952.27765", "1.2", "0.8", "0.85"]
+				}
+			]
+		},
+		{
+			"casovni zig": "728000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["2.864"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-700.6435", "893.9047", "1145.8984"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-700.6435", "893.9047", "1145.8984", "1.6", "0.6", "0.8"]
+				}
+			]
+		},
+		{
+			"casovni zig": "780000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["75.887"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-650.97766", "1012.8965", "1446.547"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-650.97766", "1012.8965", "1446.547", "1.8", "0.6", "0.75"]
+				}
+			]
+		},
+		{
+			"casovni zig": "832000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["52.483"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-540.81757", "1096.2177", "1639.6333"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-540.81757", "1096.2177", "1639.6333", "2.0", "0.6", "0.7"]
+				}
+			]
+		},
+		{
+			"casovni zig": "884000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["0.001"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-380.7566", "1158.087", "1803.681"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-380.7566", "1158.087", "1803.681", "2.2", "0.6", "0.68"]
+				}
+			]
+		},
+		{
+			"casovni zig": "936000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["8.562"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-180.41037", "1184.1997", "1900.4762"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["-180.41037", "1184.1997", "1900.4762", "2.5", "0.4", "0.66"]
+				}
+			]
+		},
+		{
+			"casovni zig": "988000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["17.159"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["10.54595", "1175.1931", "1933.1406"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["10.54595", "1175.1931", "1933.1406", "2.8", "0", "0.64"]
+				}
+			]
+		},
+		{
+			"casovni zig": "1040000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["5.133"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["210.54968", "1143.172", "1932.2968"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["210.54968", "1143.172", "1932.2968", "3", "-0.5", "0.62"]
+				}
+			]
+		},
+		{
+			"casovni zig": "1092000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["12.649"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["380.80182", "1093.7996", "1911.5005"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["380.80182", "1093.7996", "1911.5005", "3.05", "-1.0", "0.6"]
+				}
+			]
+		},
+		{
+			"casovni zig": "1144000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["15.342"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["500.79956", "1043.36993", "1859.7769"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["500.79956", "1043.36993", "1859.7769", "3.1", "-1.2", "0.58"]
+				}
+			]
+		},
+		{
+			"casovni zig": "1196000",
+			"zapis": [
+				{
+					"tip": "1D",
+					"oznaka": "navor na palico (skalar)",
+					"zapis": ["10.845"]
+				},
+				{
+					"tip": "3D",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["550.87054", "999.2596", "1803.6072"]
+				},
+				{
+					"tip": "6DOF",
+					"oznaka": "marker na glavi palice",
+					"zapis": ["550.87054", "999.2596", "1803.6072", "3.15", "-1.4", "0.56"]
+				}
+			]
+		}
+	]
+}
+

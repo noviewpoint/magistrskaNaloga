@@ -1,0 +1,15 @@
+{
+	"name": "movement-visualizer",
+	"description": "Magistrska naloga: Spletna aplikacija za upodabljanje povratne informacije pri gibalnem učenju",
+	"main": "js/app.js",
+	"authors": [
+		"David Brvar"
+	],
+	"license": "GPL-3.0",
+	"homepage": "https://github.com/noviewpoint",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components"
+	]
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<address>
+		<http-websocket>http://127.0.0.1:3468</http-websocket>
+		<tcp>http://127.0.0.1:9004</tcp>
+	</address>
+</config>

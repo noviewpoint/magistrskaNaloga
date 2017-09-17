@@ -1,0 +1,160 @@
+<canvas id="renderer"></canvas>
+
+<!-- scene controls -->
+<div style="position: fixed; top: 0; right: 0; color: white; width: 250px;">
+	<form>
+		<div style="position: absolute; right: 35px; height: 360px;">
+			<div style="position: absolute;">Počasneje</div>
+			<rzslider style="margin-top: 35px; margin-bottom: 5px;"; rz-slider-model="DefaultCtrl.playbackSpeedSlider.value" rz-slider-options="DefaultCtrl.playbackSpeedSlider.options"></rzslider>
+			<div style="position: absolute;">Hitreje</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-11">
+				<div class="checkbox">
+					<div class="checkboxCostum">
+						<input type="checkbox" id="checkboxMasterTrace" ng-model="DefaultCtrl.showMasterTrace" ng-change="DefaultCtrl.showHideMasterTrace();" />
+						<label for="checkboxMasterTrace"></label>
+					</div>
+					<span class="checkboxCostumSpan">Referenčna izvedba</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-11">
+				<div class="checkbox">
+					<div class="checkboxCostum">
+						<input type="checkbox" id="checkboxMasterClub" ng-model="DefaultCtrl.showMasterClub" ng-change="DefaultCtrl.showHideMasterClub();" />
+						<label for="checkboxMasterClub"></label>
+					</div>
+					<span class="checkboxCostumSpan">Model referenčne izvedbe</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-11">
+				<div class="checkbox">
+					<div class="checkboxCostum">
+						<input type="checkbox" id="checkboxLiveTrace" ng-model="DefaultCtrl.showLiveTrace" ng-change="DefaultCtrl.showHideLiveTrace();" />
+						<label for="checkboxLiveTrace"></label>
+					</div>
+					<span class="checkboxCostumSpan">Trenutna izvedba</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-11">
+				<div class="checkbox">
+					<div class="checkboxCostum">
+						<input type="checkbox" id="checkboxLiveClub" ng-model="DefaultCtrl.showLiveClub" ng-change="DefaultCtrl.showHideLiveClub();" />
+						<label for="checkboxLiveClub"></label>
+					</div>
+					<span class="checkboxCostumSpan">Model trenutne izvedbe</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-11">
+				<div class="checkbox">
+					<div class="checkboxCostum">
+						<input type="checkbox" id="checkboxHuman" ng-model="DefaultCtrl.showHuman" ng-change="DefaultCtrl.showHideHuman();" />
+						<label for="checkboxHuman"></label>
+					</div>
+					<span class="checkboxCostumSpan">Človek</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-11">
+				<div class="checkbox">
+					<div class="checkboxCostum">
+						<input type="checkbox" id="checkboxEnvironment" ng-model="DefaultCtrl.showEnvironment" ng-change="DefaultCtrl.showHideEnvironment();" />
+						<label for="checkboxEnvironment"></label>
+					</div>
+					<span class="checkboxCostumSpan">Okolica</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-11">
+				<div class="checkbox">
+					<div class="checkboxCostum">
+						<input type="checkbox" id="checkboxRepeatPlayback" ng-model="DefaultCtrl.repeatPlayback" ng-change="DefaultCtrl.changedRepeatPlayback();" />
+						<label for="checkboxRepeatPlayback"></label>
+					</div>
+					<span class="checkboxCostumSpan">Ponovi</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-11">
+				<div class="checkbox">
+					<div id="soundIcon" ng-style="{'background' : DefaultCtrl.isSoundTurnedOn() ? 'url(img/zvocnik_ON.png)' : 'url(img/zvocnik_OFF.png)', 'background-size' : 'cover'}" ng-click="DefaultCtrl.toogleSound();"></div>
+					<span class="checkboxCostumSpan">Zvok</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-7" style="margin-top: 40px;">
+				<button class="btn btn-block btn-primary" ng-click="DefaultCtrl.changeViewToTop();">Pogled od zgoraj</button>
+				<button class="btn btn-block btn-danger" ng-click="DefaultCtrl.changeViewToSide();">Pogle iz strani</button>
+				<button class="btn btn-block btn-success" ng-click="DefaultCtrl.changeViewToFront();">Pogled od zadaj</button>
+			</div>
+		</div>
+
+	</form>
+</div>
+
+
+<!-- playback controls -->
+<div style="position: fixed; bottom: 0; margin-bottom: 10px; width: 100%;">
+	<!-- http://getbootstrap.com/components/#input-groups-buttons -->
+	<form class="form-horizontal">
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-1 text-center">
+				<button class="btn btn-default btn-info" ng-click="DefaultCtrl.triggerPlayback();">{{DefaultCtrl.playbackPaused ? "Predvajaj" : "Ustavi";}}</button>
+			</div>
+			<div class="col-sm-6">
+				<input id="playbackInputRange" type="range" class="form-control" ng-model="DefaultCtrl.ranger" min="{{DefaultCtrl.rangerMinimumValue}}" max="{{DefaultCtrl.rangerMaximumValue}}" ng-change="DefaultCtrl.changedRanger();">
+			</div>
+		</div>
+	</form>
+</div>
+<!-- izris grafov -->
+<div id="grafi" ng-controller="GrafController as GrafCtrl">
+	<div id="collapseButton" ng-click="GrafCtrl.switchGraph();" ng-style="{'background' : GrafCtrl.isArrowTurnedDown() ? 'url(img/puscica_dol.png)' : 'url(img/puscica_gor.png)', 'background-size' : 'cover', 'background-position' : 'center center'}"></div>
+	<graf1></graf1>
+	<graf2></graf2>
+	<graf3></graf3>
+	<graf4></graf4>
+	<graf5></graf5>
+
+	<!-- info about timestamps -->
+	<div id="timestampsTable" style="position: relative; top: 0; left: 0; padding-left: 50px; color: white; width: 360px; height: 48px; opacity: 0.9;">
+		<!-- fixed layout, da se tabela ne premika med updatanjem novih cifer vanjo -->
+		<table style="width: 230px; table-layout: fixed; text-align: center;">
+			<thead>
+				<tr style="height: 24px;">
+					<th style="width: 90px;">&nbsp</th>
+					<th style="text-align: center;">Referenčni</th>
+					<th style="text-align: center;">Trenutni</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!--<tr>
+					<td style="text-align: left; width: 90px;">Title:</td>
+					<td style="text-align: right;" id="titleMaster">{{DefaultCtrl.titleMaster}}</td>
+					<td style="text-align: right;" id="titleLive">{{DefaultCtrl.titleLive}}</td>
+				</tr>-->
+				<tr style="height: 24px;">
+					<td style="text-align: center; width: 90px;">Časovni žig:</td>
+					<td style="text-align: center;" id="timestampMaster">{{DefaultCtrl.timestampMaster}}</td>
+					<td style="text-align: center;" id="timestampLive">{{DefaultCtrl.timestampLive}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
