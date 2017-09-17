@@ -1,1 +1,9 @@
-Dodelal generator
+Dodal 6DOF zogo
+
+Dodal, da se model zoge predvaja v posnetku. Preimenoval funkcije in
+spremenljivke namenjene draw-u palice v za splosno risanje modelov
+(ime rigidBody).
+
+Spremenil podatke gibanja (dodal marker na zogi kot 6DOF tip).
+
+Spremenil gumb na Generator.exe. Spremenil README.md.

@@ -100,12 +100,12 @@
 		vm.changePlaybackSpeed = changePlaybackSpeed;
 		vm.showMasterTrace = true;
 		vm.showHideMasterTrace = showHideMasterTrace;
-		vm.showMasterClub = true;
-		vm.showHideMasterClub = showHideMasterClub;
+		vm.showMasterRigidBody = true;
+		vm.showHideMasterRigidBody = showHideMasterRigidBody;
 		vm.showLiveTrace = true;
 		vm.showHideLiveTrace = showHideLiveTrace;
-		vm.showLiveClub = true;
-		vm.showHideLiveClub = showHideLiveClub;
+		vm.showLiveRigidBody = true;
+		vm.showHideLiveRigidBody = showHideLiveRigidBody;
 		vm.showHuman = false;
 		vm.showHideHuman = showHideHuman;
 		vm.showHuman = false;
@@ -320,7 +320,11 @@
 				for (let x in tip) {
 					if (x === "marker na glavi palice") {
 
-						drawClub(frameMaster, tip[x], masterClub, progress, vm.showMasterClub);
+						drawRigidBody(frameMaster, tip[x], masterClub, progress, vm.showMasterRigidBody);
+
+					} else if (x === "marker na zogi") {
+
+						drawRigidBody(frameMaster, tip[x], masterBall, progress, vm.showMasterRigidBody);
 
 					}
 				}
@@ -364,7 +368,11 @@
 				for (let x in tip) {
 					if (x === "marker na glavi palice") {
 
-						drawClub(frameLive, tip[x], liveClub, progress, vm.showLiveClub);
+						drawRigidBody(frameLive, tip[x], liveClub, progress, vm.showLiveRigidBody);
+
+					} else if (x === "marker na zogi") {
+
+						drawRigidBody(frameLive, tip[x], liveBall, progress, vm.showLiveRigidBody);
 
 					}
 				}
@@ -444,7 +452,7 @@
 			}
 		}
 
-		function drawClub(endFrame, frames, club, progress, flag) {
+		function drawRigidBody(endFrame, frames, club, progress, flag) {
 			if (flag) {
 				club.visible = true;
 
@@ -882,8 +890,11 @@
 
 				}
 			}
-			hideClub(masterClub);
-			hideClub(liveClub);
+			hideRigidBody(masterClub);
+			hideRigidBody(liveClub);
+
+			hideRigidBody(masterBall);
+			hideRigidBody(liveBall);
 
 			frameMaster = 0;
 			frameLive = 0;
@@ -1025,9 +1036,10 @@
 			}
 		}
 
-		function showHideMasterClub() {
-			if (!vm.showMasterClub) {
-				hideClub(masterClub);
+		function showHideMasterRigidBody() {
+			if (!vm.showMasterRigidBody) {
+				hideRigidBody(masterClub);
+				hideRigidBody(masterBall);
 			}
 		}
 
@@ -1062,9 +1074,10 @@
 			}
 		}
 
-		function showHideLiveClub() {
-			if (!vm.showLiveClub) {
-				hideClub(liveClub);
+		function showHideLiveRigidBody() {
+			if (!vm.showLiveRigidBody) {
+				hideRigidBody(liveClub);
+				hideRigidBody(liveBall);
 			}
 		}
 
@@ -1183,9 +1196,19 @@
 			golfBall.name = "golf zogica";
 			scene.add(golfBall);
 
-			footBall = initFootBall();
-			footBall.name = "fuzbal zoga";
-			scene.add(footBall);
+			masterBall = initFootBall();
+			masterBall.name = "masterBall";
+			masterBall.visible = false;
+			masterBall.castShadow = true;
+			masterBall.receiveShadow = true;
+			scene.add(masterBall);
+
+			liveBall = initFootBall();
+			liveBall.name = "liveBall";
+			liveBall.visible = false;
+			liveBall.castShadow = true;
+			liveBall.receiveShadow = true;
+			scene.add(liveBall);
 
 			human = initHuman();
 			human.name = "clovek";
@@ -1442,7 +1465,7 @@
 
 			setTimeout(function() {
 				applyHeightDataToPlane(grass);
-			}, 10); /* ce ni zakasnjeno ne prime pravilno in je trava kitajski kras, svasta...*/
+			}, 25); /* ce ni zakasnjeno ne prime pravilno in je trava kitajski kras, svasta...*/
 			//grass.depthWrite = false;
 			return grass;
 		}
@@ -1580,7 +1603,7 @@
 			}
 		}
 
-		function hideClub(club) {
+		function hideRigidBody(club) {
 			club.visible = false;
 		}
 
@@ -1678,18 +1701,19 @@
 			torquePlot.flag = false;
 			timelinePlot.flag = false;
 
-			let tip;
+			let tipMasterData = golfMasterData["3D"];
+			let tipLiveData = golfLiveData["3D"];
 			switch(mass) {
 				case 1:
 					console.log("Activated xy chart");
 					xyPlot.flag = true;
 
-					tip = golfMasterData["3D"];
-					for (let x in tip) {
+					for (let x in tipMasterData) {
+						drawTrace(0, frameMaster, tipMasterData[x], xyPlot.masterMarkers[x], xyPlot.masterBones[x], progress, xyPlot.flag);
+					}
 
-						drawTrace(0, frameMaster, tip[x], xyPlot.masterMarkers[x], xyPlot.masterBones[x], progress, xyPlot.flag);
-						drawTrace(0, frameLive, tip[x], xyPlot.liveMarkers[x], xyPlot.liveBones[x], progress, xyPlot.flag);
-
+					for (let x in tipLiveData) {
+						drawTrace(0, frameLive, tipLiveData[x], xyPlot.liveMarkers[x], xyPlot.liveBones[x], progress, xyPlot.flag);
 					}
 
 					break;
@@ -1697,12 +1721,12 @@
 					console.log("Activated yz chart");
 					yzPlot.flag = true;
 
-					tip = golfMasterData["3D"];
-					for (let x in tip) {
+					for (let x in tipMasterData) {
+						drawTrace(0, frameMaster, tipMasterData[x], yzPlot.masterMarkers[x], yzPlot.masterBones[x], progress, yzPlot.flag);
+					}
 
-						drawTrace(0, frameMaster, tip[x], yzPlot.masterMarkers[x], yzPlot.masterBones[x], progress, yzPlot.flag);
-						drawTrace(0, frameLive, tip[x], yzPlot.liveMarkers[x], yzPlot.liveBones[x], progress, yzPlot.flag);
-
+					for (let x in tipLiveData) {
+						drawTrace(0, frameLive, tipLiveData[x], yzPlot.liveMarkers[x], yzPlot.liveBones[x], progress, yzPlot.flag);
 					}
 
 					break;
@@ -1710,12 +1734,12 @@
 					console.log("Activated xz chart");
 					xzPlot.flag = true;
 
-					tip = golfMasterData["3D"];
-					for (let x in tip) {
+					for (let x in tipMasterData) {
+						drawTrace(0, frameMaster, tipMasterData[x], xzPlot.masterMarkers[x], xzPlot.masterBones[x], progress, xzPlot.flag);
+					}
 
-						drawTrace(0, frameMaster, tip[x], xzPlot.masterMarkers[x], xzPlot.masterBones[x], progress, xzPlot.flag);
-						drawTrace(0, frameLive, tip[x], xzPlot.liveMarkers[x], xzPlot.liveBones[x], progress, xzPlot.flag);
-
+					for (let x in tipLiveData) {
+						drawTrace(0, frameLive, tipLiveData[x], xzPlot.liveMarkers[x], xzPlot.liveBones[x], progress, xzPlot.flag);
 					}
 
 					break;
@@ -1727,16 +1751,16 @@
 					console.log("Activated timeline chart");
 					timelinePlot.flag = true;
 
-					tip = golfMasterData["3D"];
-					for (let x in tip) {
+					for (let x in tipMasterData) {
+						drawTrace(0, frameMaster, tipMasterData[x], timelinePlot.x.masterMarkers[x], timelinePlot.x.masterBones[x], progress, timelinePlot.flag);
+						drawTrace(0, frameMaster, tipMasterData[x], timelinePlot.y.masterMarkers[x], timelinePlot.y.masterBones[x], progress, timelinePlot.flag);
+						drawTrace(0, frameMaster, tipMasterData[x], timelinePlot.z.masterMarkers[x], timelinePlot.z.masterBones[x], progress, timelinePlot.flag);
+					}
 
-						drawTrace(0, frameMaster, tip[x], timelinePlot.x.masterMarkers[x], timelinePlot.x.masterBones[x], progress, timelinePlot.flag);
-						drawTrace(0, frameMaster, tip[x], timelinePlot.y.masterMarkers[x], timelinePlot.y.masterBones[x], progress, timelinePlot.flag);
-						drawTrace(0, frameMaster, tip[x], timelinePlot.z.masterMarkers[x], timelinePlot.z.masterBones[x], progress, timelinePlot.flag);
-						drawTrace(0, frameLive, tip[x], timelinePlot.x.liveMarkers[x], timelinePlot.x.liveBones[x], progress, timelinePlot.flag);
-						drawTrace(0, frameLive, tip[x], timelinePlot.y.liveMarkers[x], timelinePlot.y.liveBones[x], progress, timelinePlot.flag);
-						drawTrace(0, frameLive, tip[x], timelinePlot.z.liveMarkers[x], timelinePlot.z.liveBones[x], progress, timelinePlot.flag);
-
+					for (let x in tipLiveData) {
+						drawTrace(0, frameLive, tipLiveData[x], timelinePlot.x.liveMarkers[x], timelinePlot.x.liveBones[x], progress, timelinePlot.flag);
+						drawTrace(0, frameLive, tipLiveData[x], timelinePlot.y.liveMarkers[x], timelinePlot.y.liveBones[x], progress, timelinePlot.flag);
+						drawTrace(0, frameLive, tipLiveData[x], timelinePlot.z.liveMarkers[x], timelinePlot.z.liveBones[x], progress, timelinePlot.flag);
 					}
 
 					break;
